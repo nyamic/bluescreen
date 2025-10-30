@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Everything is fine :)</title>
+<style>
+  :root{
+    --bsod-blue:#0084C7;     /* ← 새 배경색 */
+    --white:#fff;
+    --smiley-gap:0.12em;
+  }
+
+  html,body{
+    height:100%; margin:0;
+    background:var(--bsod-blue); color:var(--white);
+    font-family:"Segoe UI","Segoe UI Variable Text",Inter,"Source Sans 3",
+                "Noto Sans KR","Noto Sans","Helvetica Neue",Arial,system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+  }
+
+  .screen{
+    height:100%; display:flex; align-items:flex-start;
+    padding:60px; box-sizing:border-box;
+  }
+  .col{ display:flex; flex-direction:column; }
+
+  .smiley{
+    font-weight:300;
+    line-height:1;
+    letter-spacing:-0.02em;
+    font-size:180px;       /* 고정 크기 */
+    margin:0 0 40px 0;
+    display:flex;
+    align-items:flex-start;
+  }
+  .smiley .paren{ margin-left:var(--smiley-gap); }
+
+  .msg,.sub{
+    max-width:900px;
+    margin:0 0 8px 0;
+    opacity:.95;
+    font-size:20px;        /* 고정 크기 */
+  }
+
+  @media (max-width:640px){
+    .screen{ justify-content:center; align-items:center; text-align:center; padding:30px; }
+  }
+</style>
+</head>
+<body>
+  <main class="screen" role="main" aria-label="Recovery message screen">
+    <section class="col">
+      <div class="smiley" aria-hidden="true">
+        <span class="colon">:</span><span class="paren">)</span>
+      </div>
+
+      <p class="msg">Everything is fine now. Your PC has successfully recovered and no action is needed.</p>
+      <p class="sub">Maybe?</p>
+    </section>
+  </main>
+</body>
+</html>
