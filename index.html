@@ -6,7 +6,7 @@
 <title>Everything is fine :)</title>
 <style>
   :root{
-    --bsod-blue:#0084C7;     /* ← 새 배경색 */
+    --bsod-blue:#0084C7;  /* 배경색 */
     --white:#fff;
     --smiley-gap:0.12em;
   }
@@ -16,35 +16,59 @@
     background:var(--bsod-blue); color:var(--white);
     font-family:"Segoe UI","Segoe UI Variable Text",Inter,"Source Sans 3",
                 "Noto Sans KR","Noto Sans","Helvetica Neue",Arial,system-ui,sans-serif;
-    -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
   }
 
   .screen{
-    height:100%; display:flex; align-items:flex-start;
-    padding:60px; box-sizing:border-box;
+    height:100%;
+    display:flex;
+    align-items:flex-start;
+    padding:60px;
+    box-sizing:border-box;
   }
-  .col{ display:flex; flex-direction:column; }
 
+  .col{
+    display:flex;
+    flex-direction:column;
+  }
+
+  /* --- 기본 (PC 기준) --- */
   .smiley{
     font-weight:300;
     line-height:1;
     letter-spacing:-0.02em;
-    font-size:180px;       /* 고정 크기 */
-    margin:0 0 40px 0;
+    font-size:150px;   /* PC: 조금 더 작게 */
+    margin:0 0 32px 0;
     display:flex;
     align-items:flex-start;
   }
-  .smiley .paren{ margin-left:var(--smiley-gap); }
-
-  .msg,.sub{
-    max-width:900px;
-    margin:0 0 8px 0;
-    opacity:.95;
-    font-size:20px;        /* 고정 크기 */
+  .smiley .paren{
+    margin-left:var(--smiley-gap);
   }
 
+  .msg, .sub{
+    max-width:900px;
+    margin:0 0 6px 0;
+    opacity:.95;
+    font-size:18px;   /* PC: 조금 더 작게 */
+  }
+
+  /* --- 모바일 (640px 이하) --- */
   @media (max-width:640px){
-    .screen{ justify-content:center; align-items:center; text-align:center; padding:30px; }
+    .screen{
+      justify-content:flex-start; /* 왼쪽 정렬 */
+      align-items:flex-start;
+      text-align:left;
+      padding:30px;
+    }
+    .smiley{
+      font-size:100px; /* 모바일: 더 작게 */
+      margin-bottom:24px;
+    }
+    .msg, .sub{
+      font-size:16px;  /* 모바일 텍스트 살짝 축소 */
+    }
   }
 </style>
 </head>
